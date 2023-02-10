@@ -9,11 +9,11 @@ export function SmokeScreen1() {
     <View>
       <Text>SmokeScreen1</Text>
       <Button
-        title='SmokeScreen2'
+        title='SS2'
         onPress={() => { navigation.navigate('SmokeScreen2') }}
       />
       <Button
-        title='SmokeScreen3'
+        title='SS3'
         onPress={() => { navigation.navigate('SmokeScreen3') }}
       />
     </View>

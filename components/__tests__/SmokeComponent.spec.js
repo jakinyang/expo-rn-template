@@ -5,6 +5,6 @@ import { Smoke } from '../SmokeComponent'
 describe('Smoke', () => {
   it('should render correctly', () => {
     render(<Smoke />);
-    expect(getByText('I only smoke in Jest')).toBeVisible()
+    expect(screen.getByText('I only smoke in Jest')).toBeVisible()
   });
 })

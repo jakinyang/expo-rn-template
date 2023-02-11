@@ -6,18 +6,16 @@ import { RaccoonScreen } from '../screens/RaccoonScreen'
 import { HomeScreen } from '../screens/HomeScreen';
 const Stack = createNativeStackNavigator();
 
-export function StackNavigator({ data }) {
+export function StackNavigator() {
   return (
     <Stack.Navigator>
       <Stack.Screen
         name='HomeScreen'
-        // component={HomeScreen}
+        component={HomeScreen}
         options={{
           headerShown: false,
         }}
-      >
-        {() => <HomeScreen data={data} />}
-      </Stack.Screen>
+      />
       <Stack.Screen
         name='RaccoonScreen'
         component={RaccoonScreen}

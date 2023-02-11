@@ -1,16 +1,19 @@
 import React from "react";
-import { NavigationContainer} from '@react-navigation/native';
+import { NavigationContainer } from '@react-navigation/native';
 import { render, screen, fireEvent } from '@testing-library/react-native';
 import { TabNavigator } from "../TabNavigator";
-
+import { Provider } from 'react-redux';
+import { store } from "../../../store";
 jest.mock('react-native/Libraries/Animated/NativeAnimatedHelper');
 
 describe('Tab Navigator', () => {
   it('should render a tab navigator', () => {
     const NavigationComponent = (
-      <NavigationContainer>
-        <TabNavigator />
-      </NavigationContainer>
+      <Provider store={store}>
+        <NavigationContainer>
+          <TabNavigator />
+        </NavigationContainer>
+      </Provider>
     )
 
     render(NavigationComponent);
@@ -19,18 +22,22 @@ describe('Tab Navigator', () => {
   });
   it('should render the HomeScreen initially', () => {
     const NavigationComponent = (
-      <NavigationContainer>
-        <TabNavigator />
-      </NavigationContainer>
+      <Provider store={store}>
+        <NavigationContainer>
+          <TabNavigator />
+        </NavigationContainer>
+      </Provider>
     )
     render(NavigationComponent);
     expect(screen.getByText('Neighbourhood Raccoons')).toBeVisible();
   });
   it('should navigate to the About tab when the button is pressed', async () => {
     const NavigationComponent = (
-      <NavigationContainer>
-        <TabNavigator />
-      </NavigationContainer>
+      <Provider store={store}>
+        <NavigationContainer>
+          <TabNavigator />
+        </NavigationContainer>
+      </Provider>
     )
     render(NavigationComponent);
     const AboutButton = screen.getByText('About');
@@ -40,9 +47,11 @@ describe('Tab Navigator', () => {
   });
   it('should navigate back to Homescreen from the About screen when the back button is pressed.', async () => {
     const NavigationComponent = (
-      <NavigationContainer>
-        <TabNavigator />
-      </NavigationContainer>
+      <Provider store={store}>
+        <NavigationContainer>
+          <TabNavigator />
+        </NavigationContainer>
+      </Provider>
     )
     render(NavigationComponent);
     const AboutButton = screen.getByText('About');

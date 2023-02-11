@@ -1,19 +1,22 @@
 import { View, Text, TouchableOpacity } from 'react-native';
 import React from 'react';
-import { useRoute } from '@react-navigation/native';
+import { useRoute, useNavigation } from '@react-navigation/native';
 
-export function RaccoonScreen({ data, route }) {
-
-  const raccoonInfo = data ? data : route.params
+export function RaccoonScreen() {
+  const route = useRoute();
+  const navigation = useNavigation()
+  const { data } = route.params
+  console.log(data);
+  console.log(data.name);
   return (
     <View>
       <View accessibilityLabel='raccoon'>
-        <Text>{raccoonInfo.name}</Text>
-        <Text>{raccoonInfo.age}</Text>
-        <Text>{raccoonInfo.favouriteFood}</Text>
-        <Text>{raccoonInfo.neighbourhood}</Text>
+        <Text>{data.name}</Text>
+        <Text>{data.age}</Text>
+        <Text>{data.favouriteFood}</Text>
+        <Text>{data.neighbourhood}</Text>
       </View>
-      <TouchableOpacity>
+      <TouchableOpacity onPress={() => navigation.goBack()}>
         <Text accessibilityLabel='Back'>X</Text>
       </TouchableOpacity>
     </View>

@@ -1,9 +1,9 @@
 import { View, Text } from 'react-native';
 import React from 'react';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
-import { HomeScreen } from '../screens/HomeScreen'
-import { AboutScreen } from '../screens/AboutScreen'
+import { AboutScreen } from '../screens/AboutScreen';
+import { StackNavigator } from '../navigation/StackNavigator'
 
 const Tab = createBottomTabNavigator();
 
@@ -14,7 +14,7 @@ export function TabNavigator() {
     >
       <Tab.Screen
         name='Home'
-        component={HomeScreen}
+        component={StackNavigator}
         options={{
           headerShown: false,
         }}

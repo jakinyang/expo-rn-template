@@ -11,13 +11,11 @@ export function StackNavigator({ data }) {
     <Stack.Navigator>
       <Stack.Screen
         name='HomeScreen'
-        // component={HomeScreen}
+        component={HomeScreen}
         options={{
           headerShown: false,
         }}
-      >
-        {() => <HomeScreen data={data} />}
-      </Stack.Screen>
+      />
       <Stack.Screen
         name='RaccoonScreen'
         component={RaccoonScreen}

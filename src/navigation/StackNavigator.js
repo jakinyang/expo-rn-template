@@ -6,7 +6,7 @@ import { RaccoonScreen } from '../screens/RaccoonScreen'
 import { HomeScreen } from '../screens/HomeScreen';
 const Stack = createNativeStackNavigator();
 
-export function StackNavigator({ data }) {
+export function StackNavigator() {
   return (
     <Stack.Navigator>
       <Stack.Screen

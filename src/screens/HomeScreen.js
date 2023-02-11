@@ -11,9 +11,9 @@ export function HomeScreen({ data }) {
     <View>
       <Text>Neighbourhood Raccoons</Text>
       <FlatList
-        data={raccoons ? raccoons : data}
+        data={raccoons}
         keyExtractor={item => item.id}
-        renderItem={(item) => (
+        renderItem={({item}) => (
           <TouchableOpacity onPress={() => navigation.navigate("RaccoonScreen", { data: item })}>
             <View accessibilityLabel='raccoon' >
               <Text>{item.name}</Text>

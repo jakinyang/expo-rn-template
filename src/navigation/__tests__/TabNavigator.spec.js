@@ -56,8 +56,8 @@ describe('Tab Navigator', () => {
     render(NavigationComponent);
     const AboutButton = screen.getByText('About');
     fireEvent(AboutButton, 'press');
-    const BackButton = await screen.getByLabelText('Back');
-    fireEvent(BackButton, 'press');
+    const HomeButton = await screen.getByText('Home');
+    fireEvent(HomeButton, 'press');
     const HomeScreenText = await screen.getByText("Neighbourhood Raccoons");
     expect(HomeScreenText).toBeVisible();
   });

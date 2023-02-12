@@ -6,8 +6,6 @@ export function RaccoonScreen() {
   const route = useRoute();
   const navigation = useNavigation()
   const { data } = route.params
-  console.log(data);
-  console.log(data.name);
   return (
     <View>
       <View accessibilityLabel='raccoon'>

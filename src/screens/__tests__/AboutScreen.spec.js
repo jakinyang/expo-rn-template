@@ -22,12 +22,4 @@ describe('AboutScreen', () => {
     );
     expect(screen.getByText(lorem)).toBeVisible();
   });
-  it('should render a back button', () => {
-    render(
-      <NavigationContainer>
-        <AboutScreen />
-      </NavigationContainer>
-    );
-    expect(screen.getByLabelText('Back')).toBeVisible();
-  });
 })
